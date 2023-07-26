@@ -31,7 +31,7 @@ Outside of the fMRIPrep options, you may also want to specify some container opt
 
 ```bash
 apptainer run \  # Run container instance
-    --mount type=bind,src=$(realpath ~/Data)/${USER}/fmriprep_workshop,dst=/mnt/fmriprep_workshop \  # Mont directory containing bids data
+    --mount type=bind,src=$(realpath ~/Data)/${USER}/fmriprep_workshop,dst=/mnt/fmriprep_workshop \  # Mount directory containing bids data
     /sharedapps/LS/psych_imaging/containers/fmriprep-23.1.3.simg \ # # Target the container image to run
     $BIDS_DIR \  # Location of the mounted bids directory
     $PROCESSED_DIR \  # Locaiton for the output Data
