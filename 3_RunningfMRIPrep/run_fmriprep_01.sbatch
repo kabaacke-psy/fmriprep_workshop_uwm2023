@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=run_fmriprep_01
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=2
+#SBATCH --array=0-92
+#SBATCH --mem=16G
+#SBATCH --output=~/Data/${USER}/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.out 
+#SBATCH --error=~/Data/${USER}/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.err
+
+SUBJECT_LIST=('sub-MSC01' 'sub-MSC02' 'sub-MSC03' 'sub-MSC04' 'sub-MSC05' 'sub-MSC06' 'sub-MSC07' 'sub-MSC08' 'sub-MSC09' 'sub-MSC10')
+SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
+
+BIDS_DIR=/sharedapps/LS/psych_imaging/fmriprep_workshop/ds000224-download
+PROCESSED_DIR=/sharedapps/LS/psych_imaging/fmriprep_workshop/ds000224-download/derivatives/fmriprep_run_01
+
+apptainer run --mount type=bind,src=$(realpath ~/Data)/${USER}/fmriprep_workshop,dst=/mnt/fmriprep_workshop /sharedapps/LS/psych_imaging/containers/fmriprep-23.1.3.simg $BIDS_DIR $PROCESSED_DIR participant --fs-license-file /mnt/fmriprep_workshop/freesurfer_license.txt --participant_label $SUBJECT --ignore slicetiming --output-spaces MNI152NLin2009cAsym --bold2t1w-dof 9 --return-all-components --skull-strip-template OASIS30ANTs --write-graph --stop-on-first-crash --fs-no-reconall --n_cpus 2
