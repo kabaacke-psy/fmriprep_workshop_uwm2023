@@ -1,9 +1,16 @@
 # Commonly Used Commands
+There are **A LOT** of commands you can use within an environment like Mortimer. I reccomend keeping a cheet sheet nearby for whatever OS you are using. When the cheat sheet is not enough, be sure to include your OS when searching for solutions. You can use `cat /etc/os-release` to view information about your OS. Mortimer is currently running CentOS-7. This is a relatively old distribution, but is still widely used for its stability and compatibility. As a result, you should be able to reliably find solutions with a well worded web-search.
+
+Bash is a shell scripting language used by many systems. When working on a system like Mortimer, bash will be your primary way of navigating and performing different operations. Slurm is the job management system Mortimer uses. Most commands have a variety of flags to modify what they do. 
+
+For this workshop, it may be helpful to have the commands below open in a side tab if you are not familiar with bash or slurm commands. These **are not** the formal deffinitions; these are abbreviated and re-worded with some commentary in order to provide an accessible starting point. If you would like to view the full documentation, use the `--help` flag. For example, `cd --help` will tell you more about the cd command.
+
+Bash is a shell scripting language used by many systems. When working on a system like Mortimer, bash will be your primary way of navigating and performing different operations. Most command also have a variety of flags to modify what they do. Almost all commands will have a `--help` flag which you can use to get more information about their use.
 
 ## Bash Commands
 Bash is a shell scripting language used by many systems. When working on a system like Mortimer, bash will be your primary way of navigating and performing different operations. Most command also have a variety of flags to modify what they do. Almost all commands will have a `--help` flag which you can use to get more information about their use. Below are a few of the most frequently used commands and some of their commonly used flags. This is not an exhaustive list. These are not the formal definitions of these commands.
 
-- `cd`: Used to change directory. Typically you will specify the relative or full path to the directory you want to change to after this command. If no directory is specified, it will default to your home directory (`~/`). `..` can also be used to go up one level in your directory tree. This can be chained; `cd ../../..` will take you up three levels in the directory tree. You can also reference environmental variables using this command. For example, you can use `cd $OLDPWD` to change to the directory you were before your last CD command.
+- `cd`: Used to change directory. Typically you should specify the relative or full path to the directory you want to change to after this command. If no directory is specified, it will default to your home directory (`~/`). `..` can also be used to go up one level in your directory tree. This can be chained; `cd ../../..` will take you up three levels in the directory tree. You can also reference environmental variables using this command. For example, you can use `cd $OLDPWD` to change to the directory you were before your last CD command.
 - `pwd`: Print working directory.
 - `ls`: This command lists the contents of the directory you are currently in. 
     - `-a` (all) will cause `ls` to display hidden files and folders.

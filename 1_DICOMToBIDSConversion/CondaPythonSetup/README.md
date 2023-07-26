@@ -1,5 +1,5 @@
 # Conda/Python Setup
-[Python](https://www.python.org/) is a freely available and relatively intuitive programming language commonly used for a wide variety of purposes. [Conda](https://docs.conda.io/en/latest/) is a freely package management system and environment management system. We will primarily be using Conda for Python environment setup, but it is important to keep in mind that it can do much more than that if the circumstance calls for it. 
+[Python](https://www.python.org/) is a freely available and relatively intuitive programming language commonly used for a wide variety of purposes. [Conda](https://docs.conda.io/en/latest/) is a freely available package management system and environment management system. We will primarily be using Conda for Python environment setup, but it is important to keep in mind that it can do much more. 
 
 ## Creating a conda environment
 First we need to create log into an environment suitable to accomplish our tasks. You can complete the following steps on the visual node, but I recommend connecting to a compute node for the sake of speed and efficiency. To do so, enter the following command:
@@ -27,7 +27,7 @@ function setup_conda(){
 export -f setup_conda
 ```
 
-The first line instantiates the function, the middle two lines define what the function does, and the last line exports the command so that you can simply type `setup_conda` when you log in to activate conda.
+The first line instantiates the function, the middle two lines define what the function does, and the last line exports the command so that you can use the user defined function, `setup_conda`, when you log in to activate conda.
 
 Next, we need to create a new conda environment so that our package installations don't interfere with other users' experience. I recommend creating a directory specifically for your conda environments in your data directory. For example:
 
@@ -37,7 +37,7 @@ mkdir ~/Data/${USER}/conda_envs
 
 The `${USER}` will use the environment vairbale `USER` which is automatically set when you log in. There is no need to manually insert your username into this command.
 
-Now we are ready to create a new conda environment. We will use the *-p* flag to specify a full path to where we want our environemnt to be stored. **You will not be able to run the command without this flag because you should not have write permissions to the default location of conda environments.**
+Now we are ready to create a new conda environment. We will use the *-p* flag to specify a full path to where we want our environemnt to be stored. **You will not be able to run the command without this flag because you should not have write permissions to the default location of conda environments on the cluster.**
 
 ```bash
 # This may take a while.
@@ -51,7 +51,7 @@ conda env list
 conda info --envs
 ```
 
-Before we activate our new environment and start installing things, we will need to add a the conda-forge channel to our conda configuration. This can be accomplished by entering the following into your terminal:
+Before we activate our new environment and start installing things, we will need to add a the conda-forge channel to our Conda configuration. This can be accomplished by entering the following into your terminal:
 
 ```bash
 conda config --append channels conda-forge
@@ -59,7 +59,7 @@ conda config --append channels conda-forge
 
 *Note*: If you would like to see what channels you have configured, see the *channels* section of your `~/.condarc`.
 
-Now we are ready to activate our environment and begin installing packages. To activate the environment, simply use the activate command:
+Now we are ready to activate our environment and begin installing packages. To activate the environment, use the activate command:
 
 ```bash
 conda activate ~/Data/${USER}/conda_envs/dcm2bids-env
@@ -70,3 +70,4 @@ For our purposes in this section, we should only need three packages: pandas, dc
 ```bash
 conda install pandas dcm2niix dcm2bids
 ```
+This may take a while, so it i good to have something else lined up to work on while this runs. Once it is complete, you are ready to move on to [Using dcm2bids](../UsingDcm2bids/).
