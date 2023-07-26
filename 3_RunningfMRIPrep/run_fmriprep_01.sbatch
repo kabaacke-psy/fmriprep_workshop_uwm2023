@@ -11,7 +11,7 @@ SUBJECT_LIST=('sub-MSC01' 'sub-MSC02' 'sub-MSC03' 'sub-MSC04' 'sub-MSC05' 'sub-M
 SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
 
 BIDS_DIR=/mnt/fmriprep_workshop_shared/ds000224-download
-PROCESSED_DIR=/mnt/fmriprep_workshop/ds000224-download/derivatives/fmriprep_run_01
+PROCESSED_DIR=/mnt/fmriprep_workshop/ds000224/derivatives/fmriprep_run_01
 
 echo "Apptainer started @ $(date +%x_%H:%M:%S:%N)"
 

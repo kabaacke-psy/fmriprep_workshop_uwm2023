@@ -10,7 +10,7 @@ import os, glob
 # Assign the USER environment variable as a Python variable
 USER = os.getenv('USER')
 # Set the path of the project in question
-project_path = f'~/Data/{USER}/fmriprep_workshop/'
+project_path = f'/home/{USER}/Data/{USER}/fmriprep_workshop/'
 # Specify the folder containing the output of the dicm2bids_helper output
 raw_folder = f'{project_path}RawNifti'
 

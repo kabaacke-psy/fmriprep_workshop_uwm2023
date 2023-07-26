@@ -36,9 +36,10 @@ To run this same process on only one of the scans, simply add the name of the fo
 dcm2bids_helper -d /sharedapps/LS/psych_imaging/fmriprep_workshop/dcm_qa_nih-master/In/{NAME_OF_FOLDER} -o ~/Data/${USER}/fmriprep_workshop/RawNifti/{NAME_OF_FOLDER}
 ```
 
-You may also want to preserve the names of the folders rather than just the names of the files. See [dcm2bids_helper_01.sbatch](./dcm2bids_helper_01.sbatch) for an example of this. You can submit this array job to the cluster using 
+You may also want to preserve the names of the folders rather than just the names of the files. See [dcm2bids_helper_01.sbatch](./dcm2bids_helper_01.sbatch) for an example of this. After changing `kbaacke` to your username, you can submit this array job to the cluster using `sbatch`:
+
 ```bash
-sbatch /sharedapps/LS/psych_info/fmriprep_workshop/
+sbatch /sharedapps/LS/psych_info/fmriprep_workshop/fmriprep_workshop_uwm2023/1_DICOMToBIDSConversion/1-1_UsingDcm2bids/dcm2bids_helper.sbatch
 ```
 
 You may have learned that `#` can be used to leave comments in a shell script. While this is true, `#` is also used to specify attributes of a script or to pass additional arguments to the command used to run a script.
