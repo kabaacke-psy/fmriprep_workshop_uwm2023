@@ -2,7 +2,7 @@
 [Python](https://www.python.org/) is a freely available and relatively intuitive programming language commonly used for a wide variety of purposes. [Conda](https://docs.conda.io/en/latest/) is a freely available package management system and environment management system. We will primarily be using Conda for Python environment setup, but it is important to keep in mind that it can do much more. 
 
 ## Creating a conda environment
-First we need to create log into an environment suitable to accomplish our tasks. You can complete the following steps on the visual node, but I recommend connecting to a compute node for the sake of speed and efficiency. To do so, enter the following command:
+First we need to create log into an environment suitable to accomplish our tasks. You can complete the following steps on the visual node or a compute node. To use a compute node, enter the following command:
 
 ```bash
 slurm-shell --mem=4G
@@ -68,6 +68,7 @@ conda activate ~/Data/${USER}/conda_envs/dcm2bids-env
 For our purposes in this section, we should only need three packages: pandas, dcm2niix, and dcm2bids. You can install them using the basic install command if your environment is active.
 
 ```bash
+# This may also take a while.
 conda install pandas dcm2niix dcm2bids
 ```
-This may take a while, so it i good to have something else lined up to work on while this runs. Once it is complete, you are ready to move on to [Using dcm2bids](../UsingDcm2bids/).
+Once this is complete, you are ready to move on to [Using dcm2bids](../UsingDcm2bids/).
