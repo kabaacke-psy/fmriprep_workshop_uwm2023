@@ -13,7 +13,7 @@ conda activate ~/Data/${USER}/conda_envs/dcm2bids-env
 
 SUBJECT_LIST=($(ls /sharedapps/LS/psych_imaging/fmriprep_workshop/dcm_qa_nih-master/In/))
 SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
-OUTPUT_DIR=~/Data/${USER}/fmriprep_workshop/RawNifti/
+OUTPUT_DIR=~/Data/${USER}/fmriprep_workshop/RawNifti/${SUBJECT}
 SUBJECT_DIR=/sharedapps/LS/psych_imaging/fmriprep_workshop/dcm_qa_nih-master/In/$SUBJECT
 
 for SCAN_DIR in $(ls $SUBJECT_DIR)
