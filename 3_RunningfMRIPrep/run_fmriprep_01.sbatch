@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --array=0-9
 #SBATCH --mem=16G
-#SBATCH --output=~/Data/${USER}/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.out 
-#SBATCH --error=~/Data/${USER}/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.err
+#SBATCH --output=/home/kbaacke/Data/kbaacke/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.out 
+#SBATCH --error=/home/kbaacke/Data/kbaacke/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.err
 
 SUBJECT_LIST=('sub-MSC01' 'sub-MSC02' 'sub-MSC03' 'sub-MSC04' 'sub-MSC05' 'sub-MSC06' 'sub-MSC07' 'sub-MSC08' 'sub-MSC09' 'sub-MSC10')
 SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
