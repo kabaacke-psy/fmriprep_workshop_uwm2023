@@ -4,8 +4,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem=3G
 #SBATCH --array=0-1
-#SBATCH --output=~/Data/${USER}/fmriprep_workshop/outputAndErrors/dcm2bids_helper_01-%A_%a.out 
-#SBATCH --error=~/Data/${USER}/fmriprep_workshop/outputAndErrors/dcm2bids_helper_01-%A_%a.err
+#SBATCH --output=/home/${USER}/Data/${USER}/fmriprep_workshop/outputAndErrors/dcm2bids_helper_01-%A_%a.out 
+#SBATCH --error=/home/${USER}/Data/${USER}/fmriprep_workshop/outputAndErrors/dcm2bids_helper_01-%A_%a.err
 
 . /sharedapps/LS/conda/miniconda/etc/profile.d/conda.sh
 conda activate
