@@ -22,7 +22,6 @@ for subject_id in reference_df['SubjectID'].unique():
   subject_df = reference_df[reference_df['SubjectID']==subject_id]
   # Iterate through the rows (representing scans) in the subset dataframe
   for index, row in subject_df.iterrows():
-    print(row)
     # Identify which scan was which based on the 'Scan' column
     if row['Scan']=='mr_0003':
       scan_description = {
