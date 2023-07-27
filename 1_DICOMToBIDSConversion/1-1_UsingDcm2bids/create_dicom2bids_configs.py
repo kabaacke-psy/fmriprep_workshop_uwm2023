@@ -22,8 +22,9 @@ for subject_id in reference_df['SubjectID'].unique():
   subject_df = reference_df[reference_df['SubjectID']==subject_id]
   # Iterate through the rows (representing scans) in the subset dataframe
   for index, row in subject_df.iterrows():
+    print(row)
     # Identify which scan was which based on the 'Scan' column
-    if row['Scan']=='Rest1':
+    if row['Scan']=='mr_0003':
       scan_description = {
         'dataType':'func',
         'modalityLabel':'bold',
@@ -37,7 +38,7 @@ for subject_id in reference_df['SubjectID'].unique():
           'AcquisitionTime':None
         }
       }
-    elif row['Scan']=='Rest2':
+    elif row['Scan']=='mr_0004':
       scan_description = {
         'dataType':'func',
         'modalityLabel':'bold',
@@ -51,11 +52,11 @@ for subject_id in reference_df['SubjectID'].unique():
           'AcquisitionTime':None
         }
       }
-    elif row['Scan']=='SPGR1':
+    elif row['Scan']=='mr_0005':
       scan_description = {
-        'dataType':'anat',
-        'modalityLabel':'T1w',
-        'customLabels':'run-01',
+        'dataType':'func',
+        'modalityLabel':'bold',
+        'customLabels':'task-rest_run-03',
         # 'session':'',
         'criteria':{
           'SeriesDescription':row['SeriesDescription'],
@@ -65,11 +66,11 @@ for subject_id in reference_df['SubjectID'].unique():
           'AcquisitionTime':None
         }
       }
-    elif row['Scan']=='SPGR2':
+    elif row['Scan']=='mr_0006':
       scan_description = {
-        'dataType':'anat',
-        'modalityLabel':'T1w',
-        'customLabels':'run-02',
+        'dataType':'func',
+        'modalityLabel':'bold',
+        'customLabels':'task-rest_run-04',
         # 'session':'',
         'criteria':{
           'SeriesDescription':row['SeriesDescription'],
@@ -79,39 +80,11 @@ for subject_id in reference_df['SubjectID'].unique():
           'AcquisitionTime':None
         }
       }
-    elif row['Scan']=='SPGR3':
+    elif row['Scan']=='mr_0007':
       scan_description = {
-        'dataType':'anat',
-        'modalityLabel':'T1w',
-        'customLabels':'run-03',
-        # 'session':'',
-        'criteria':{
-          'SeriesDescription':row['SeriesDescription'],
-          'SeriesNumber':int(row['SeriesNumber'])
-        },
-        'sidecarChanges':{
-          'AcquisitionTime':None
-        }
-      }
-    elif row['Scan']=='SPGR4':
-      scan_description = {
-        'dataType':'anat',
-        'modalityLabel':'T1w',
-        'customLabels':'run-04',
-        # 'session':'',
-        'criteria':{
-          'SeriesDescription':row['SeriesDescription'],
-          'SeriesNumber':int(row['SeriesNumber'])
-        },
-        'sidecarChanges':{
-          'AcquisitionTime':None
-        }
-      }
-    elif row['Scan']=='SPGR5':
-      scan_description = {
-        'dataType':'anat',
-        'modalityLabel':'T1w',
-        'customLabels':'run-05',
+        'dataType':'func',
+        'modalityLabel':'bold',
+        'customLabels':'task-rest_run-05',
         # 'session':'',
         'criteria':{
           'SeriesDescription':row['SeriesDescription'],
