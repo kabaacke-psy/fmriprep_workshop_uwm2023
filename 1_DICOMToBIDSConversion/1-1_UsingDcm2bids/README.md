@@ -44,7 +44,7 @@ sbatch /sharedapps/LS/psych_info/fmriprep_workshop/fmriprep_workshop_uwm2023/1_D
 
 You may have learned that `#` can be used to leave comments in a shell script. While this is true, `#` is also used to specify attributes of a script or to pass additional arguments to the command used to run a script.
  
-The first line (`#!/bin/bash`) is called a (shebang)[https://en.wikipedia.org/wiki/Shebang_%28Unix%29]. This tells our machine which interpreter to use when executing this script.
+The first line (`#!/bin/bash`) is called a [shebang](https://en.wikipedia.org/wiki/Shebang_%28Unix%29). This tells our machine which interpreter to use when executing this script.
 
 The following five lines all specify the values for optional flags to use when we call `sbatch`. To preview all of the possible options, use `sbatch --help`. In this case, I named the job with `--job-name`, specified the number of tasks and CPUs with `--ntasks` and `--cpus-per-task`, and specified the amount of memory per needed per job with `--mem`. The final argument line specifies that this is an array job which will be run across 5 identical nodes. Not that I include the starting value of `0` because array jobs without a starting value will start at `1`. The values in the `array` argument wil be used to set the `SLURM_ARRAY_TASK_ID` environment variable on a per task basis. This script uses `SLURM_ARRAY_TASK_ID` to index within a list, and list indices start at `0`. Using `--array=5` would skip the first folder and would return an error for the task with the `SLURM_ARRAY_TASK_ID` of 5 as there are only 5 folders in our raw DICOM directory.
 
@@ -79,7 +79,7 @@ Now that the .JSON files have been created, you can inspect them to wee which pi
 diff --side-by-side tmp_dcm2bids/helper/"003_In_EPI_PE=AP_20180918121230.json" tmp_dcm2bids/helper/"004_In_EPI_PE=PA_20180918121230.json"
 ```
 
-If you have many scans to inspect, I suggest using a tool like Python to consolidate the information from the JSON files into a spreadsheet for easy inspection. For an example of how to do so, please see [Metadata Consolidation]().
+If you have many scans to inspect, I suggest using a tool like Python to consolidate the information from the JSON files into a spreadsheet for easy inspection. For an example of how to do so, please see the next step.
 
 ## Metadata consolidation (optional)
 

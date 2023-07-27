@@ -1,5 +1,5 @@
 # Running fMRIPrep
-[fMRIPrep](https://fmriprep.org/en/stable/) extremely well documented, and I encourage you to reference the documentation (*specific to the version you are using*) when deciding which optional flags to use when running fMRIPrep. This tutorial follows the documentation provided by the creators of fMRIPrep for [Executing with Singularity](https://www.nipreps.org/apps/singularity/) in the context of the Mortimer System. If you would like to learn more about containers and their accompanying hosting softwares like singularity, please see [INSERT HELPFUL EXPLANATORY LINK HERE](). 
+[fMRIPrep](https://fmriprep.org/en/stable/) extremely well documented, and I encourage you to reference the documentation (*specific to the version you are using*) when deciding which optional flags to use when running fMRIPrep. This tutorial follows the documentation provided by the creators of fMRIPrep for [Executing with Singularity](https://www.nipreps.org/apps/singularity/) in the context of the Mortimer System.
 
 **Do not skip the following step if running fMRIPrep on Mortimer!**
 
@@ -32,7 +32,7 @@ Outside of the fMRIPrep options, you may also want to specify some container opt
 ```bash
 apptainer run \  # Run container instance
     --mount type=bind,src=$(realpath ~/Data)/${USER}/fmriprep_workshop,dst=/mnt/fmriprep_workshop \  # Mount directory containing bids data
-    /sharedapps/LS/psych_imaging/containers/fmriprep-23.1.3.simg \ # # Target the container image to run
+    /sharedapps/LS/psych_imaging/containers/fmriprep-23.1.3.sif \ # # Target the container image to run
     $BIDS_DIR \  # Location of the mounted bids directory
     $PROCESSED_DIR \  # Locaiton for the output Data
     participant \  # Level on which to run fmriprep
@@ -46,7 +46,7 @@ apptainer run \  # Run container instance
     --skull-strip-template OASIS30ANTs \  # select a template for skull-stripping with antsBrainExtraction
     --write-graph \  # Write workflow graph.
     --stop-on-first-crash \  # Force stopping on first crash, even if a work directory was specified.
-    --fs-no-reconall \  # disable FreeSurfer surface preprocessing. --I also wan tto remove this for this dataset in case we want to do surface-based analyses.
+    --fs-no-reconall \  # disable FreeSurfer surface preprocessing. 
 ```
 [run_fmriprep_01.sbatch](./run_fmriprep_01.sbatch) will launch an array job to run all of the subjects in the [UCLA Consortium for Neuropsychiatric Phenomics LA5c Study](https://openneuro.org/datasets/ds000030/versions/00016/) dataset. This script can be easily modified for other datasets, but keep in mind that you may need to adjust the memory capacity based on how much data each node needs to process. You can run this batch script using `sbatch /sharedapps/LS/psych_imaging/fmriprep_workshop/fmriprep_workshop_uwm2023/3_RunningfMRIPrep/run_fmriprep_01.sbatch`
 

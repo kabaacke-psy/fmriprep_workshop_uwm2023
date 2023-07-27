@@ -71,4 +71,4 @@ For our purposes in this section, we should only need three packages: pandas, dc
 # This may also take a while.
 conda install pandas dcm2niix dcm2bids
 ```
-Once this is complete, you are ready to move on to [Using dcm2bids](../UsingDcm2bids/).
+Once this is complete, you are ready to move on to [Using dcm2bids](../1-1UsingDcm2bids/).
