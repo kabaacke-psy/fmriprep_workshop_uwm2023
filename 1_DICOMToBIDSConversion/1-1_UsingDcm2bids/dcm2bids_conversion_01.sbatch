@@ -9,7 +9,7 @@
 
 . /sharedapps/LS/conda/miniconda/etc/profile.d/conda.sh
 conda activate
-conda activate ~/Data/kbaacke/${USER}/dcm2bids-env
+conda activate ~/Data/${USER}/conda_envs/dcm2bids-env
 
 SUBJECT_LIST=($(ls /sharedapps/LS/psych_imaging/fmriprep_workshop/dcm_qa_nih-master/In/))
 SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
@@ -19,7 +19,4 @@ SUBJECT_DIR=/sharedapps/LS/psych_imaging/fmriprep_workshop/dcm_qa_nih-master/In/
 
 dcm2bids -d $SUBJECT_DIR -p $SUBJECT -c $SUBJECT_JSON -s 01 -o $OUTPUT_DIR
 echo "${SUBJECT} conversion complete."
-```
-The array of jobs can be sent to the cluster que using the following `sbatch`:
-```bash
-sbatch /sharedapps/LS/psych_imaging/fmriprep_workshop/DICOM_to_BIDS_Conversion/dcm2bids_conversion_01.sbatch
+
