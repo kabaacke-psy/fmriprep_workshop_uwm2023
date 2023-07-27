@@ -21,8 +21,8 @@ ln -s "$(realpath ~/Data)"/${USER}/work/ ~/work
 ## Table of contents
 - [Commonly Used Commands Bash Commands](./0_CommonlyUsedCommands/)
 - [DICOM 2 BIDS Conversion](./1_DICOMToBIDSConversion/)
-  - [Setting up Conda/Python](./1-0_DICOMToBIDSConversion/CondaPythonSetup/)
-  - [Using dcm2bids](./1-1_DICOMToBIDSConversion/UsingDcm2bids/consolidate_metadata)
+  - [Setting up Conda/Python](./1_DICOMToBIDSConversion/1-0_CondaPythonSetup/)
+  - [Using dcm2bids](./1_DICOMToBIDSConversion/1-1_UsingDcm2bids/)
 - [Defacing with MiDeFace2](./2_DefacingWithMiDeFace2/)
 - [Running fMRIPrep](./3_RunningfMRIPrep/)
 
