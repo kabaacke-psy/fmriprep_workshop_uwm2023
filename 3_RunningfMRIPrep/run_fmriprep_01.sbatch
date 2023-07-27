@@ -2,16 +2,16 @@
 #SBATCH --job-name=run_fmriprep_01
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --array=0-9
+#SBATCH --array=1-5
 #SBATCH --mem=16G
 #SBATCH --output=/home/kbaacke/Data/kbaacke/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.out 
 #SBATCH --error=/home/kbaacke/Data/kbaacke/fmriprep_workshop/outputAndErrors/run_fmriprep_01_%A_%a.err
 
-SUBJECT_LIST=('sub-MSC01' 'sub-MSC02' 'sub-MSC03' 'sub-MSC04' 'sub-MSC05' 'sub-MSC06' 'sub-MSC07' 'sub-MSC08' 'sub-MSC09' 'sub-MSC10')
-SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
+BIDS_DIR=/mnt/fmriprep_workshop_shared/ds000030-download
+PROCESSED_DIR=/mnt/fmriprep_workshop/ds000030/derivatives/fmriprep_run_01
 
-BIDS_DIR=/mnt/fmriprep_workshop_shared/ds000224-download
-PROCESSED_DIR=/mnt/fmriprep_workshop/ds000224/derivatives/fmriprep_run_01
+SUBJECT_LIST=($(cut -f1 -d$'\t' ${BIDS_DIR}/participants.tsv))
+SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
 
 echo "Apptainer started @ $(date +%x_%H:%M:%S:%N)"
 
