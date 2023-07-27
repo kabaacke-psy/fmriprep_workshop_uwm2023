@@ -11,7 +11,7 @@ project_path = f'~/Data/{USER}/fmriprep_workshop/'
 # Specify the folder containing the output of the dicm2bids_helper output
 raw_folder = f'{project_path}RawNifti'
 # Open the metadata spreadsheet
-reference_df = pd.read_csv(f'{project_path}target_scan_metadata.csv')
+reference_df = pd.read_csv(f'{project_path}target_scan_metadata_editted.csv')
 # Iterate through each subject
 for subject_id in reference_df['SubjectID'].unique():
   # Create a dictionary with a 'descriptions' key with an empty list as the value 
