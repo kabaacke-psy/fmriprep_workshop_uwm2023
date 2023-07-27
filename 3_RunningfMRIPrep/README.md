@@ -1,4 +1,4 @@
-# Running fMRIPrep
+# Running fMRIPrep 
 [fMRIPrep](https://fmriprep.org/en/stable/) extremely well documented, and I encourage you to reference the documentation (*specific to the version you are using*) when deciding which optional flags to use when running fMRIPrep. This tutorial follows the documentation provided by the creators of fMRIPrep for [Executing with Singularity](https://www.nipreps.org/apps/singularity/) in the context of the Mortimer System.
 
 **Do not skip the following step if running fMRIPrep on Mortimer!**

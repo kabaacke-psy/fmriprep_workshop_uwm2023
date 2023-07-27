@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash 
 #SBATCH --job-name=run_fmriprep_01
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2

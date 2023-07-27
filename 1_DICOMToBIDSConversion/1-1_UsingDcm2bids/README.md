@@ -1,4 +1,4 @@
-# Using dcm2bids
+# Using dcm2bids 
 
 ## Creating the BIDS Structure
 Along with performing the conversion from DICOM to NIFTI, the `dcm2bids` package can also be used to create a BIDS compliant data structure for us to put our data into. If you would like to learn more about BIDS, I strongly recommend looking at the [BIDS Starter Kit](https://bids-standard.github.io/bids-starter-kit/index.html). To create the top-level folder structure and metadata files, we will use the `scaffold` command. First navigate to your data directory where you want your BIDS data to be stored, then use the following code, where DATASET_NAME is the name you want to use for your BIDS folder.
@@ -88,6 +88,12 @@ If your data is well organized and you know exactly which scan files to use with
 [consolidate_metadata.py](./consolidate_metadata.py) iterates through a file structure containing the output from `dcm2bids_helper` and consolidates the metadata from all of the temporary .JSON files into a single spreadsheet. This can be a great way to check to make sure the scans are labeled correctly and to verify that no personally identifiable information (PII) is accidentally transferred from the DICOM files to your BIDS data structure. 
 
 The .CSV file which appears in the `project_path` after this script runs will contain headers for each of the DICOM values present across any scans with a row entry for every .JSON file it finds. This way, you can preview what information would be present in the sidecar files without any other intervention.
+
+You can transfer the file to your local machine using `scp` by running the following command, replacing kbaacke with your username:
+
+```bash
+scp -P 22018 kbaacke@mortimer.hpc.uwm.edu:/home/kbaacke/Data/kbaacke/fmriprep_workshop/target_scan_metadata.csv target_scan_metadata.csv
+```
 
 ## dcm2bids Configuration
 

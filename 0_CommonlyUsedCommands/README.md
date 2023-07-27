@@ -1,4 +1,4 @@
-# Commonly Used Commands
+# Commonly Used Commands 
 There are **A LOT** of commands you can use within an environment like Mortimer. I reccomend keeping a cheet sheet nearby for whatever OS you are using. When the cheat sheet is not enough, be sure to include your OS when searching for solutions. You can use `cat /etc/os-release` to view information about your OS. Mortimer is currently running CentOS-7. This is a relatively old distribution, but is still widely used for its stability and compatibility. As a result, you should be able to reliably find solutions with a well worded web-search.
 
 Bash is a shell scripting language used by many systems. When working on a system like Mortimer, bash will be your primary way of navigating and performing different operations. Slurm is the job management system Mortimer uses. Most commands have a variety of flags to modify what they do. 

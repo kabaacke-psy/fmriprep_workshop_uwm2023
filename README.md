@@ -1,4 +1,4 @@
-# fMRIPrep Workshop UWM 2023
+# fMRIPrep Workshop UWM 2023 
 Description here
 
 ## Setting up directories

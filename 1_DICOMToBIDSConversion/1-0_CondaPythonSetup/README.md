@@ -1,4 +1,4 @@
-# Conda/Python Setup
+# Conda/Python Setup 
 [Python](https://www.python.org/) is a freely available and relatively intuitive programming language commonly used for a wide variety of purposes. [Conda](https://docs.conda.io/en/latest/) is a freely available package management system and environment management system. We will primarily be using Conda for Python environment setup, but it is important to keep in mind that it can do much more. 
 
 ## Creating a conda environment
