@@ -10,7 +10,7 @@
 BIDS_DIR=/mnt/fmriprep_workshop_shared/ds000030-download
 PROCESSED_DIR=/mnt/fmriprep_workshop/ds000030/derivatives/fmriprep_run_01
 
-SUBJECT_LIST=($(cut -f1 -d$'\t' ${BIDS_DIR}/participants.tsv))
+SUBJECT_LIST=($(cut -f1 -d$'\t' /sharedapps/LS/psych_imaging/fmriprep_workshop/ds000030-download/participants.tsv))
 SUBJECT=${SUBJECT_LIST[${SLURM_ARRAY_TASK_ID}]}
 
 echo "Apptainer started @ $(date +%x_%H:%M:%S:%N)"
