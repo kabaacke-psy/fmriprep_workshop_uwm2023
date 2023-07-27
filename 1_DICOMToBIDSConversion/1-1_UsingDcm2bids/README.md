@@ -142,16 +142,16 @@ We can then go through the other scans in the folder, and add an entry in `"desc
 }
 ```
 
-If the header information is consistent across participants, you can reference the same config file multiple times. If the config files need to be created dynamically based on a spreadsheet like the one created in the optional [Metadata Consolidation]() step, see [Programmatic dcm2bids Config Creation]() for a possibly time-saving option using Python. 
+If the header information is consistent across participants, you can reference the same config file multiple times. If the config files need to be created dynamically based on a spreadsheet like the one created in the optional [Metadata Consolidation]() step, see [Programmatic dcm2bids Config Creation] for a possibly time-saving option using Python. 
 
-For the sample dataset, you can create your own config file for these scans, or you can use the example [provided]().
+For the sample dataset, you can create your own config file for these scans, or you can use the python scripts to prepare them for you.
 
 ## Programmatic dcm2bids Config Creation
 If you want to create your configuration files on a subject-by-subject basis but don't want to spend valuable time making those configuration files by hand, you can use the following Python script to complete the process based on a spreadsheet of header information like the one created in [consolidate_metadata.py](./consolidate_metadata.py).
 
 The script below uses a combination of `"SeriesDescription"` and `"SeriesNumber"` as present in the metadata spreadsheet so assign flexible criteria on a scan-by-scan basis for each scan in the dataset. Additionally, this script always removes the `"AcquisitionTime"` value to prevent any possible breach of PII.
 
-*When you move on to [Run dcm2bids](), be sure to reference the json files on a subject-by-subject basis.*
+*When you move on to the Run dcm2bids step, be sure to reference the json files on a subject-by-subject basis.*
 
 ## Run dcm2bids
 For instructions on how to run `dcm2bids` on the example data, please see the appropriate section in the [First-Steps](https://unfmontreal.github.io/Dcm2Bids/2.1.9/tutorial/first-steps/) tutorial. If you created your config files programmatically using the script in [Programmatic dcm2bids Config Creation](), or if you want to see an example of this process run on a cluster environment, [dcm2bids_conversion_01.sbatch](./dcm2bids_conversion_01.sbatch) an example of an array batch script which parallelizes the process on the level of the subject.
