@@ -57,7 +57,7 @@ slurm-shell --mem=8G
 apptainer shell --mount type=bind,src=$(realpath ~/Data)/${USER}/fmriprep_workshop,dst=/mnt/fmriprep_workshop fmriprep-23.1.3.sif
 ```
 
-When you `run` the container, the `fmriprep` command is run by default. You can preview what this is doing using the following command once you are in side an interactive container.
+When you `run` the container, the `fmriprep` command is run by default. You can preview what this is doing using the following command once you are inside an interactive container.
 
 ```bash
 # Identify the location of the fmriprep script
@@ -66,4 +66,4 @@ which fmriprep
 cat $(which fmriprep)
 ```
 
-This is a python script which runs the `main()` function located in the `fmriprep` site package. You can find the specific file containing this function at `/opt/conda/envs/fmriprep/bin/python3.10/site-packages/fmriprep/cli/run.py` If you ever wan tto dig deeper into what fMRIPrep is doing 'under the hood', you can backtrace from this file. If you want to do this on a local maching, you can copy the contents of `/opt/conda/envs/fmriprep/bin/python3.10/site-packages/fmriprep/` to your data directory before shutting down the container instance.
+This is a python script which runs the `main()` function located in the `fmriprep` site package. You can find the specific file containing this function at `/opt/conda/envs/fmriprep/lib/python3.10/site-packages/fmriprep/cli/run.py` If you ever want to dig deeper into what fMRIPrep is doing 'under the hood', you can backtrace from this file. If you want to do this on a local maching, you can copy the contents of `/opt/conda/envs/fmriprep/lib/python3.10/site-packages/fmriprep/` to your data directory before shutting down the container instance.
