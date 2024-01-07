@@ -7,7 +7,7 @@ However, the most recent version of FreeSurfer includes a new, minimally invasiv
 Before we can run MiDeFace2, we need to make sure the correct version of FreeSurfer is active. The following lines will need to be added to our batch script:
 
 ```bash
-FREESURFER_HOME=/sharedapps/LS/psych_imaging/freesurfer/7.2.0/freesurfer
+FREESURFER_HOME=/sharedapps/LS/psych_imaging/freesurfer/7.3.2/freesurfer
 source $FREESURFER_HOME/SetUpFreeSurfer.sh
 ```
 
