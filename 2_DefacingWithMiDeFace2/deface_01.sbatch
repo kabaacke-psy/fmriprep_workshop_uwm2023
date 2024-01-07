@@ -20,7 +20,7 @@ do
   ANAT_DIR=${SUBJECT_DIR}/${SESSION}/anat
   for TARGET_FILE in  $(ls ${ANAT_DIR}/*.nii.gz) 
   do
-    mideface2 --i $TARGET_FILE --o $TARGET_FILE --odir qa
+    mideface --i $TARGET_FILE --o $TARGET_FILE --odir qa
     echo "Defaced ${TARGET_FILE}"
   done
 done
